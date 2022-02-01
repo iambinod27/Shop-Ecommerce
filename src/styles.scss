@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700;900&display=swap");
+
+:root {
+  --primary-color: #009b72;
+  --secondary-color: #2d3047;
+  --background-color: #f5f5f5;
+  --cart-color: #de6b48;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  nav {
+    height: 100px;
+
+    .container {
+      width: 85%;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        img {
+          width: 40px;
+          margin-left: 5px;
+        }
+      }
+
+      .search-bar {
+        display: flex;
+        input {
+          width: 375px;
+          height: 40px;
+          border: none;
+          background-color: var(--background-color);
+          padding: 1rem;
+          border-radius: 5px;
+        }
+
+        .btn {
+          background-color: var(--primary-color);
+          border: none;
+          border-radius: 5px;
+          height: 40px;
+          width: 55px;
+
+          .search {
+            color: #fff;
+          }
+        }
+      }
+
+      .user-section {
+        display: flex;
+        align-items: center;
+
+        .account {
+          display: flex;
+          align-items: center;
+          border-right: 1px solid #000;
+          padding-right: 1rem;
+          margin-right: 1rem;
+
+          .userIcon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-right: 4px;
+          }
+        }
+
+        .cart {
+          display: flex;
+          align-items: center;
+
+          .cart-wheel {
+            color: var(--primary-color);
+            position: relative;
+            font-size: 2rem;
+            margin-right: 10px;
+          }
+
+          .cart-number {
+            position: absolute;
+            width: 25px;
+            text-align: center;
+            top: 15px;
+            right: 165px;
+            border: 1px solid var(--cart-color);
+            border-radius: 50px;
+            color: #fff;
+            background-color: var(--cart-color);
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+  .categories-link {
+    background: var(--primary-color);
+
+    .container {
+      height: 50px;
+
+      ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        li {
+          display: flex;
+          align-items: center;
+          color: #fff;
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.featured {
+  padding: 2rem 0;
+  .container {
+    .featured-container {
+      background: var(--background-color);
+
+      padding: 2rem;
+      overflow: hidden;
+
+      h2 {
+        margin-bottom: 1.5rem;
+      }
+
+      .Products-container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        .products {
+          margin-right: 30px;
+          width: 270px;
+
+          text-align: center;
+
+          border-radius: 10px;
+          background: #fff;
+          display: grid;
+          place-items: center;
+
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+
+          .reviews {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+
+            li {
+              .stared {
+                color: gold;
+              }
+
+              .unstared {
+                color: gold;
+              }
+            }
+          }
+
+          h3 {
+            padding: 10px 0;
+          }
+          .btn {
+            border: none;
+            background: var(--primary-color);
+            display: flex;
+            align-items: center;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+
+            .cart {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
