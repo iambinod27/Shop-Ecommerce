@@ -64,6 +64,7 @@ header {
           border-radius: 5px;
           height: 40px;
           width: 55px;
+          cursor: pointer;
 
           .search {
             color: #fff;
@@ -91,11 +92,11 @@ header {
 
         .cart {
           display: flex;
+          position: relative;
           align-items: center;
 
           .cart-wheel {
             color: var(--primary-color);
-            position: relative;
             font-size: 2rem;
             margin-right: 10px;
           }
@@ -104,8 +105,8 @@ header {
             position: absolute;
             width: 25px;
             text-align: center;
-            top: 15px;
-            right: 165px;
+            top: -20px;
+            right: 60px;
             border: 1px solid var(--cart-color);
             border-radius: 50px;
             color: #fff;
@@ -143,7 +144,7 @@ header {
   .container {
     .featured-container {
       background: var(--background-color);
-
+      position: relative;
       padding: 2rem;
       overflow: hidden;
 
@@ -151,16 +152,42 @@ header {
         margin-bottom: 1.5rem;
       }
 
+      .sliderArrow {
+        width: 50px;
+        height: 25%;
+        background-color: #fff;
+        color: #000;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        position: absolute;
+        z-index: 999;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: pointer;
+
+        &.left {
+          left: 0;
+          border-bottom-right-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+
+        &.right {
+          right: 0;
+          border-bottom-left-radius: 10px;
+          border-top-left-radius: 10px;
+        }
+      }
+
       .Products-container {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
+        display: flex;
+        width: max-content;
+        transform: translateX(0px);
+        transition: all 1s ease;
 
         .products {
           margin-right: 30px;
-          width: 270px;
-
+          width: 300px;
           text-align: center;
-
           border-radius: 10px;
           background: #fff;
           display: grid;
@@ -189,6 +216,7 @@ header {
 
           h3 {
             padding: 10px 0;
+            font-weight: regular;
           }
           .btn {
             border: none;
@@ -199,11 +227,32 @@ header {
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 1rem;
+            cursor: pointer;
 
             .cart {
               color: #fff;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.logo-section {
+  .container {
+    .wrapper {
+      background: var(--background-color);
+      overflow: hidden;
+      padding: 2rem 0;
+
+      &-container {
+        width: 90%;
+        margin: auto;
+
+        .logo-brands {
+          display: flex;
+          width: max-content;
         }
       }
     }

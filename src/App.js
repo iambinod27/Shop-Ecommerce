@@ -1,6 +1,7 @@
 import "./styles.scss";
 import Navbar from "./components/Navbar";
 import FeaturedProduct from "./components/FeaturedProducts";
+import Logo from "./components/Logo";
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <Navbar />
 
       <FeaturedProduct />
+
+      <Logo />
     </main>
   );
 }
