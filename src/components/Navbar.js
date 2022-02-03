@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../Assests/shopping-bag-svgrepo-com.svg";
 import Search from "@material-ui/icons/Search";
 import { PersonOutlined, ShoppingCartOutlined } from "@material-ui/icons";
 import Category from "./Category";
 
+import { ProductContext } from "../context/ProductContext";
+
 const Navbar = () => {
+  const { carts } = useContext(ProductContext);
+  const [cart, setCart] = carts;
+
   return (
     <header>
       <nav>
@@ -25,7 +30,7 @@ const Navbar = () => {
             </div>
             <div className="cart">
               <ShoppingCartOutlined className="cart-wheel" />
-              <span className="cart-number">0</span>
+              <span className="cart-number">{cart.length}</span>
               <p>My Cart</p>
             </div>
           </div>

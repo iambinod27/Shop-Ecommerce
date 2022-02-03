@@ -2,10 +2,14 @@ import {
   ArrowBackIosOutlined,
   ArrowForwardIosOutlined,
 } from "@material-ui/icons";
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useContext } from "react";
 import ProductCard from "./ProductCard";
+import { ProductContext } from "../context/ProductContext";
 
 const FeaturedProduct = () => {
+  const { products } = useContext(ProductContext);
+  const [product, setProduct] = products;
+
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
 
@@ -25,9 +29,9 @@ const FeaturedProduct = () => {
   };
 
   return (
-    <section className="featured">
+    <section className="showcase">
       <div className="container">
-        <div className="featured-container">
+        <div className="showcase-container">
           <h2>Featured Products</h2>
           <ArrowBackIosOutlined
             className="sliderArrow left"
@@ -35,15 +39,16 @@ const FeaturedProduct = () => {
             style={{ display: !isMoved && "none" }}
           />
           <div className="Products-container" ref={productRef}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {product.map((item) => {
+              return (
+                <ProductCard
+                  key={item.id}
+                  id={item.id}
+                  name={item.productName}
+                  price={item.price}
+                />
+              );
+            })}
           </div>
           <ArrowForwardIosOutlined
             className="sliderArrow right"

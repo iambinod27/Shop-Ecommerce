@@ -139,10 +139,10 @@ header {
   }
 }
 
-.featured {
+.showcase {
   padding: 2rem 0;
   .container {
-    .featured-container {
+    .showcase-container {
       background: var(--background-color);
       position: relative;
       padding: 2rem;
@@ -240,6 +240,7 @@ header {
 }
 
 .logo-section {
+  padding: 2rem 0;
   .container {
     .wrapper {
       background: var(--background-color);
@@ -253,6 +254,51 @@ header {
         .logo-brands {
           display: flex;
           width: max-content;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  .container {
+    .wrapper {
+      background: var(--background-color);
+      overflow: hidden;
+      padding: 2rem 0;
+      &-container {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+
+        .delivery {
+          text-align: center;
+
+          h1 {
+            padding-bottom: 10px;
+          }
+
+          .btn {
+            background-color: var(--secondary-color);
+            border: none;
+            width: 275px;
+            height: 50px;
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+
+        .order {
+          .btn {
+            background-color: var(--secondary-color);
+            border: none;
+            width: 275px;
+            height: 50px;
+            color: #fff;
+            cursor: pointer;
+          }
         }
       }
     }
