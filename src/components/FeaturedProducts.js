@@ -16,12 +16,12 @@ const FeaturedProduct = () => {
   const productRef = useRef();
 
   const handleClick = (direction) => {
-    let distance = productRef.current.getBoundingClientRect().x - 81;
+    let distance = productRef.current.getBoundingClientRect().x - 10;
     if (direction === "left" && slideNumber > 0) {
       setSlideNumber(slideNumber - 1);
       productRef.current.style.transform = `translateX(${362 + distance}px)`;
     }
-    if (direction === "right" && slideNumber < 7) {
+    if (direction === "right" && slideNumber < 50) {
       setSlideNumber(slideNumber + 1);
       productRef.current.style.transform = `translateX(${-362 + distance}px)`;
       setIsMoved(true);
@@ -32,7 +32,12 @@ const FeaturedProduct = () => {
     <section className="showcase">
       <div className="container">
         <div className="showcase-container">
-          <h2>Featured Products</h2>
+          <div className="header-showcase">
+            <h2>Featured Products</h2>
+            <p>
+              view all <ArrowForwardIosOutlined className="forward" />
+            </p>
+          </div>
           <ArrowBackIosOutlined
             className="sliderArrow left"
             onClick={() => handleClick("left")}
@@ -46,6 +51,7 @@ const FeaturedProduct = () => {
                   id={item.id}
                   name={item.productName}
                   price={item.price}
+                  img={item.image}
                 />
               );
             })}

@@ -11,7 +11,10 @@ function Banner() {
               <button className="btn">FREE DELIVERY</button>
             </div>
             <div className="order">
-              <img src="" alt="" />
+              <img
+                src={require("../Assests/logo/seo_148852423258b913c814b9c.jpg")}
+                alt=""
+              />
               <button className="btn">ORDER NOW!!!</button>
             </div>
           </div>

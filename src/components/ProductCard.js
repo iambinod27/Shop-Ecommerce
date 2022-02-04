@@ -6,10 +6,7 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 
-const ProductCard = ({ name, price, id }) => {
-  const { products } = useContext(ProductContext);
-  const [product, setProduct] = products;
-
+const ProductCard = ({ name, price, id, img }) => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
@@ -25,10 +22,7 @@ const ProductCard = ({ name, price, id }) => {
 
   return (
     <div className="products">
-      <img
-        src={require("../Assests/msi-gp66-leopard-10ue-price-nepal-i7-10870h-rtx-3060.jpg")}
-        alt="#"
-      />
+      <img src={img} alt="#" />
       <h1>${price}</h1>
       <h3>{name}</h3>
       <ul className="reviews">

@@ -14,18 +14,26 @@ function BestSelling() {
     <section className="showcase">
       <div className="container">
         <div className="showcase-container">
-          <h2>Best Selling Products</h2>
+          <div className="header-showcase">
+            <h2>Best Selling Product</h2>
+            <p>
+              view all <ArrowForwardIosOutlined className="forward" />
+            </p>
+          </div>
           <ArrowBackIosOutlined className="sliderArrow left" />
           <div className="Products-container">
             {product.map((item) => {
-              return (
-                <ProductCard
-                  key={item.id}
-                  id={item.id}
-                  name={item.productName}
-                  price={item.price}
-                />
-              );
+              if (item.sale) {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    id={item.id}
+                    name={item.productName}
+                    price={item.price}
+                    img={item.image}
+                  />
+                );
+              }
             })}
           </div>
           <ArrowForwardIosOutlined className="sliderArrow right" />

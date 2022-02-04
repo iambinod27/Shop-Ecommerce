@@ -10,23 +10,41 @@ function Accessories() {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
 
+  const filterItems = (category) => {
+    if (category === "all") {
+      setProduct(product);
+    }
+
+    const newItems = product.filter((item) => item.category === category);
+
+    setProduct(newItems);
+  };
+
   return (
     <section className="showcase">
       <div className="container">
         <div className="showcase-container">
-          <h2>Accessories</h2>
+          <div className="header-showcase">
+            <h2>Accessories</h2>
+            <p>
+              view all <ArrowForwardIosOutlined className="forward" />
+            </p>
+          </div>
           <ArrowBackIosOutlined className="sliderArrow left" />
 
           <div className="Products-container">
             {product.map((item) => {
-              return (
-                <ProductCard
-                  key={item.id}
-                  id={item.id}
-                  name={item.productName}
-                  price={item.price}
-                />
-              );
+              if (item.category === "Accessories") {
+                return (
+                  <ProductCard
+                    key={item.id}
+                    id={item.id}
+                    name={item.productName}
+                    price={item.price}
+                    img={item.image}
+                  />
+                );
+              }
             })}
           </div>
           <ArrowForwardIosOutlined className="sliderArrow right" />

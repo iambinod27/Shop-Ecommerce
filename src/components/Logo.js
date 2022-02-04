@@ -8,37 +8,40 @@ function Logo() {
           <div className="wrapper-container">
             <ul className="logo-brands">
               <li>
-                <img src={require("../Assests/acer_1.png")} alt="" />
+                <img src={require("../Assests/logo/acer_1.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/alienware_1.png")} alt="" />
+                <img src={require("../Assests/logo/alienware_1.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/razer_1.png")} alt="" />
+                <img src={require("../Assests/logo/razer_1.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/asus_1.png")} alt="" />
+                <img src={require("../Assests/logo/asus_1.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/dell_2.png")} alt="" />
+                <img src={require("../Assests/logo/dell_2.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/hp_1_1.png")} alt="" />
+                <img src={require("../Assests/logo/hp_1_1.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/lenovo_2_1.png")} alt="" />
+                <img src={require("../Assests/logo/lenovo_2_1.png")} alt="" />
               </li>
               <li>
                 <img
-                  src={require("../Assests/microsoft-color-logo.png")}
+                  src={require("../Assests/logo/microsoft-color-logo.png")}
                   alt=""
                 />
               </li>
               <li>
-                <img src={require("../Assests/msi_1.png")} alt="" />
+                <img src={require("../Assests/logo/msi_1.png")} alt="" />
               </li>
               <li>
-                <img src={require("../Assests/apple-color-log.png")} alt="" />
+                <img
+                  src={require("../Assests/logo/apple-color-log.png")}
+                  alt=""
+                />
               </li>
             </ul>
           </div>

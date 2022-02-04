@@ -1,4 +1,4 @@
-import Logo from "../Assests/shopping-bag-svgrepo-com.svg";
+import Logo from "../Assests/logo/shopping-bag-svgrepo-com.svg";
 
 function Footer() {
   return (
@@ -29,27 +29,27 @@ function Footer() {
           <div className="we-accept">
             <h3>We Accept</h3>
             <div className="accept-logo">
-              <img src={require("../Assests/E-Sewa.png")} alt="" />
+              <img src={require("../Assests/logo/E-Sewa.png")} alt="" />
               <img
-                src={require("../Assests/fonepay_payments_fatafat.png")}
+                src={require("../Assests/logo/fonepay_payments_fatafat.png")}
                 alt=""
               />
-              <img src={require("../Assests/unnamed.png")} alt="" />
+              <img src={require("../Assests/logo/unnamed.png")} alt="" />
             </div>
           </div>
           <div className="follow">
             <h3>Follow us on</h3>
             <div className="social-media">
               <img
-                src={require("../Assests/580b57fcd9996e24bc43c53e.png")}
+                src={require("../Assests/logo/580b57fcd9996e24bc43c53e.png")}
                 alt=""
               />
               <img
-                src={require("../Assests/1024px-Facebook_Logo_(2019).png")}
+                src={require("../Assests/logo/1024px-Facebook_Logo_(2019).png")}
                 alt=""
               />
               <img
-                src={require("../Assests/2048px-Instagram_icon.png")}
+                src={require("../Assests/logo/2048px-Instagram_icon.png")}
                 alt=""
               />
             </div>
