@@ -24,7 +24,7 @@ const data = [
     productName: "ASUS ROG Zephyrus S Ultra Slim",
     price: "2,219.00",
     image: require("./Assests/Laptops/Asus-ROG-Zephyrus-S-GU502.jpg"),
-    sale: true,
+    sale: false,
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const data = [
     id: 8,
     brandName: "Logitech",
     category: "Accessories",
-    sale: false,
+    sale: true,
 
     productName: "Logitech G430 USB Gaming Headset",
     price: "60.00",

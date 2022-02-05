@@ -16,10 +16,6 @@ const ProductCard = ({ name, price, id, img }) => {
     console.log(cart);
   };
 
-  useEffect(() => {
-    return addCart;
-  }, []);
-
   return (
     <div className="products">
       <img src={img} alt="#" />

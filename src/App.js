@@ -1,31 +1,22 @@
 import "./styles.scss";
-import Navbar from "./components/Navbar";
-import FeaturedProduct from "./components/FeaturedProducts";
-import Logo from "./components/Logo";
 import { ProductProvider } from "./context/ProductContext";
-import BestSelling from "./components/BestSelling";
-import Banner from "./components/Banner";
-import Accessories from "./components/Accessories";
-import Footer from "./components/Footer";
+import Login from "./pages/Login";
+import Create from "./pages/Create";
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <ProductProvider>
-      <main>
-        <Navbar />
-
-        <FeaturedProduct />
-
-        <Logo />
-
-        <BestSelling />
-
-        <Banner />
-
-        <Accessories />
-
-        <Footer />
-      </main>
+      <Router>
+        <main>
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="signup" element={<Create />} />
+            <Route path="login" element={<Login />} />
+          </Routes>
+        </main>
+      </Router>
     </ProductProvider>
   );
 }

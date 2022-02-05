@@ -3,7 +3,7 @@ import Logo from "../Assests/logo/shopping-bag-svgrepo-com.svg";
 import Search from "@material-ui/icons/Search";
 import { PersonOutlined, ShoppingCartOutlined } from "@material-ui/icons";
 import Category from "./Category";
-
+import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import data from "../Data";
 
@@ -24,8 +24,6 @@ const Navbar = () => {
 
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
-
-  console.log(brand);
 
   const filterItems = (category) => {
     if (category === "All") {
@@ -51,10 +49,12 @@ const Navbar = () => {
             </button>
           </div>
           <div className="user-section">
-            <div className="account">
-              <PersonOutlined className="userIcon" />
-              <p>Sign In</p>
-            </div>
+            <Link to="/login" style={{ textDecoration: "none" }}>
+              <div className="account">
+                <PersonOutlined className="userIcon" />
+                Sign In
+              </div>
+            </Link>
             <div className="cart">
               <ShoppingCartOutlined className="cart-wheel" />
               <span className="cart-number">{cart.length}</span>
