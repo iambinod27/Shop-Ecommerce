@@ -9,8 +9,6 @@ import Navbar from "../components/Navbar";
 function Home() {
   return (
     <main>
-      <Navbar />
-
       <FeaturedProduct />
 
       <Logo />
@@ -20,7 +18,6 @@ function Home() {
       <Banner />
 
       <Accessories />
-      <Footer />
     </main>
   );
 }

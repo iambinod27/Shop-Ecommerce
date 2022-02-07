@@ -1,4 +1,3 @@
-import { ArrowBackOutlined } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -6,12 +5,6 @@ function Login() {
     <section className="login">
       <div className="login-container">
         <div className="user-container">
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <div className="back">
-              <ArrowBackOutlined className="backarrow" />
-              continue shopping
-            </div>
-          </Link>
           <h1>Welcome Back</h1>
           <p>Sign in to continue using Shop.</p>
           <label>

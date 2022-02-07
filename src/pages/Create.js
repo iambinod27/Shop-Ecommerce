@@ -9,20 +9,6 @@ function Create() {
           <img src={require("../Assests/Create.jpg")} alt="Login" />
         </div>
         <div className="user-container">
-          <div className="navigate">
-            <Link to="/login" style={{ textDecoration: "none" }}>
-              <div className="back">
-                <ArrowBackOutlined className="backarrow" />
-                Back to Login
-              </div>
-            </Link>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <div className="shopping">
-                Shopping
-                <ArrowForwardOutlined className="forwardarrow" />
-              </div>
-            </Link>
-          </div>
           <div className="social-section">
             <h1>CREATE ACCOUNT</h1>
             <div className="btn-section">

@@ -39,9 +39,11 @@ const Navbar = () => {
     <header>
       <nav>
         <div className="container">
-          <div className="logo">
-            Shop. <img src={Logo} alt="Logo" />
-          </div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <div className="logo">
+              Shop. <img src={Logo} alt="Logo" />
+            </div>
+          </Link>
           <div className="search-bar">
             <input type="text" placeholder="Search" />
             <button className="btn">
@@ -55,11 +57,14 @@ const Navbar = () => {
                 Sign In
               </div>
             </Link>
-            <div className="cart">
-              <ShoppingCartOutlined className="cart-wheel" />
-              <span className="cart-number">{cart.length}</span>
-              <p>My Cart</p>
-            </div>
+
+            <Link to="/cart" style={{ textDecoration: "none" }}>
+              <div className="cart">
+                <ShoppingCartOutlined className="cart-wheel" />
+                <span className="cart-number">{cart.length}</span>
+                <p>My Cart</p>
+              </div>
+            </Link>
           </div>
         </div>
       </nav>
