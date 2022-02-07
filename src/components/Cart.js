@@ -1,7 +1,7 @@
 import { ArrowBackIosOutlined, Delete } from "@material-ui/icons";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { info } from "sass";
+
 import { ProductContext } from "../context/ProductContext";
 import Cartlist from "./Cartlist";
 
