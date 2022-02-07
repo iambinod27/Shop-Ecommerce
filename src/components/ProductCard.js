@@ -6,14 +6,22 @@ import {
 import React, { useContext, useEffect, useState } from "react";
 import { ProductContext } from "../context/ProductContext";
 
-const ProductCard = ({ name, price, id, img }) => {
+const ProductCard = ({ name, price, id, img, brandName, quantity }) => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
   const addCart = () => {
-    setCart([{ productName: name, price: price }, ...cart]);
-    console.log(id);
-    console.log(cart);
+    setCart((prevItem) => [
+      ...prevItem,
+      {
+        id: new Date().getMilliseconds().toString(),
+        name: name,
+        price: price,
+        brand: brandName,
+        image: img,
+        quantity: quantity,
+      },
+    ]);
   };
 
   return (

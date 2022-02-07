@@ -7,6 +7,7 @@ const data = [
     price: "1,119.00",
     image: require("./Assests/Laptops/AcerNitro5AN517.jpg"),
     sale: false,
+    quantity: 1,
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const data = [
     productName: "MSI GF63 Thin Laptop",
     price: "959.00",
     image: require("./Assests/Laptops/msi-_0035_GF63-Thin-10SCXR-4.jpg"),
+    quantity: 1,
     sale: false,
   },
   {
@@ -25,6 +27,7 @@ const data = [
     price: "2,219.00",
     image: require("./Assests/Laptops/Asus-ROG-Zephyrus-S-GU502.jpg"),
     sale: false,
+    quantity: 1,
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const data = [
     price: "4,523.00",
     sale: false,
     image: require("./Assests/Laptops/dell-alienware-area-51m-gaming-laptop.jpg"),
+    quantity: 1,
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const data = [
     productName: "Acer Swift 7 ",
     sale: true,
     price: "1,058",
+    quantity: 1,
     image: require("./Assests/Laptops/AcerSwift7SF714-52T__1_.jpg"),
   },
   {
@@ -52,6 +57,7 @@ const data = [
     price: "789.00",
     sale: false,
     image: require("./Assests/Laptops/LD0005846339_1.jpg"),
+    quantity: 1,
   },
   {
     id: 7,
@@ -60,6 +66,7 @@ const data = [
     productName: "HP ZBook 15u G5 ",
     sale: false,
 
+    quantity: 1,
     price: "1,499.00",
     image: require("./Assests/Laptops/41ami1qQ9pL._AC_SY350_.jpg"),
   },
@@ -69,6 +76,7 @@ const data = [
     category: "Accessories",
     sale: true,
 
+    quantity: 1,
     productName: "Logitech G430 USB Gaming Headset",
     price: "60.00",
     image: require("./Assests/Accessories/Logitech-G430-500x500-1.jpg"),
@@ -77,7 +85,7 @@ const data = [
     id: 9,
     brandName: "Gamdias",
     sale: false,
-
+    quantity: 1,
     category: "Accessories",
     productName: "Gamdias HEBE M1 Premium Virtual Surround Sound",
     price: "62.00",
@@ -89,6 +97,7 @@ const data = [
     brandName: "Logitech",
     sale: false,
     category: "Accessories",
+    quantity: 1,
     productName:
       "Logitech G402 Hyperion Fury Ultra Fast FPS Gaming Mouse 4000 DPI, 1ms Report Time",
     price: "80.00",
@@ -98,6 +107,7 @@ const data = [
   {
     id: 11,
     brandName: "Logitech",
+    quantity: 1,
     category: "Accessories",
     productName:
       "Logitech BCC950 All-in-One Webcam and Speakerphone - 1080p video, 1' Screen, In-built Mic",
@@ -110,6 +120,7 @@ const data = [
     id: 12,
     brandName: "Logitech",
     category: "Accessories",
+    quantity: 1,
     productName:
       "Logitech C310 HD WebCam - 720p Video with Noise Reducing Mic, Lighting Correction",
     price: "45.00",
@@ -123,6 +134,7 @@ const data = [
     category: "Accessories",
     productName: "LOGITECH MK235 WIRELESS KEYBOARD AND MOUSE COMBO SET",
     price: "32.00",
+    quantity: 1,
     image: require("./Assests/Accessories/mk235_1.jpg"),
     sale: false,
   },
@@ -135,6 +147,7 @@ const data = [
       "Rapoo V500 Pro Mechanical Gaming RGB Keyboard - Individual Backlit Keys, Spill Resistant",
     price: "55.00",
     image: require("./Assests/Accessories/rapoo-v500-pro-budget-gaming-mechanical-keyboard-price-nepal-rgb-lighting.jpg"),
+    quantity: 1,
     sale: false,
   },
   {
@@ -145,6 +158,7 @@ const data = [
       "Dell Inspiron 3505 Ryzen5-3450U/8GB RAM/256GB SSD/16.5″ Full HD-Touch/Windows 10 Home",
     price: "700.00",
     image: require("./Assests/Laptops/3505-1-300x300.jpg"),
+    quantity: 1,
     sale: false,
   },
 ];

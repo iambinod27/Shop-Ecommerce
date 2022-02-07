@@ -1,19 +1,31 @@
 import { Delete } from "@material-ui/icons";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { ProductContext } from "../context/ProductContext";
 
-const Cartlist = () => {
+const Cartlist = ({ name, price, brand, img, id, quantity }) => {
+  const { carts } = useContext(ProductContext);
+  const [cart, setCart] = carts;
+
+  const removeItem = (id) => {
+    const newCart = cart.filter((item) => item.id !== id);
+
+    setCart(newCart);
+  };
+
   return (
-    <div className="cart-list">
+    <>
       {/* Cart-1 */}
       <div className="cart-item">
         <div className="cart-img">
-          <img src={require("../Assests/Laptops/AcerNitro5AN517.jpg")} alt="" />
+          <img src={img} alt="" />
         </div>
         <div className="cart-name">
-          <h2>Acer Nitro 5</h2>
-          <p>brand name</p>
+          <h3>{name}</h3>
+          <p>{brand}</p>
         </div>
         <div className="cart-price">
-          <h3>$700.00</h3>
+          <h3>${price}</h3>
         </div>
         <div className="cart-quantity">
           <button>+</button>
@@ -22,10 +34,10 @@ const Cartlist = () => {
         </div>
 
         <div className="cart-remove">
-          <Delete className="cart-delete" />
+          <Delete className="cart-delete" onClick={() => removeItem(id)} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

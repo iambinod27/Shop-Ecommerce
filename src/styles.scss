@@ -323,7 +323,7 @@ nav {
           .reviews {
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 5px 0;
 
             li {
               .stared {
@@ -672,6 +672,13 @@ nav {
 
       span {
         color: var(--cart-color);
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          color: #e2552a;
+          text-decoration: underline;
+        }
       }
     }
 
@@ -690,6 +697,10 @@ nav {
           img {
             width: 200px;
           }
+        }
+
+        .cart-name {
+          width: 175px;
         }
 
         .cart-quantity {
@@ -715,6 +726,12 @@ nav {
         .cart-remove {
           .cart-delete {
             color: var(--cart-color);
+            cursor: pointer;
+            font-size: 2rem;
+
+            &:hover {
+              color: #e2552a;
+            }
           }
         }
       }
@@ -725,11 +742,18 @@ nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 90%;
+      margin: auto;
 
       .backShopping {
         display: flex;
         align-items: center;
         color: var(--cart-color);
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
         .back {
           color: var(--cart-color);
         }
@@ -742,6 +766,7 @@ nav {
 
         h1 {
           font-size: 2.3rem;
+          margin: 10px 0;
         }
 
         .btn {
