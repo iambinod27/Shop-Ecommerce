@@ -42,6 +42,8 @@ function Accessories() {
                     name={item.productName}
                     price={item.price}
                     img={item.image}
+                    brandName={item.brandName}
+                    quantity={item.quantity}
                   />
                 );
               }

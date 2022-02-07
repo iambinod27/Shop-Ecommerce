@@ -682,6 +682,15 @@ nav {
       }
     }
 
+    .cart-info {
+      width: 50%;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+    }
+
     .cart-list {
       width: 90%;
       margin: auto;

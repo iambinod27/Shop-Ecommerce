@@ -1,6 +1,7 @@
 import { ArrowBackIosOutlined, Delete } from "@material-ui/icons";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { info } from "sass";
 import { ProductContext } from "../context/ProductContext";
 import Cartlist from "./Cartlist";
 
@@ -24,21 +25,32 @@ const Cart = () => {
           <span onClick={removeAll}>remove all</span>
         </div>
 
-        <div className="cart-list">
-          {cart.map((item) => {
-            return (
-              <Cartlist
-                name={item.name}
-                key={item.id}
-                price={item.price}
-                brand={item.brand}
-                img={item.image}
-                id={item.id}
-                quantity={item.quantity}
-              />
-            );
-          })}
-        </div>
+        {cart.length <= 0 ? (
+          <div className="cart-info">
+            <h1>You have no items in your shopping cart.</h1>
+          </div>
+        ) : (
+          <div className="cart-list">
+            {cart.map((item) => {
+              if (item.length <= 0) {
+                return <h2>No Item on Cart</h2>;
+              } else {
+              }
+              return (
+                <Cartlist
+                  name={item.name}
+                  key={item.id}
+                  price={item.price}
+                  brand={item.brand}
+                  img={item.image}
+                  id={item.id}
+                  quantity={item.quantity}
+                />
+              );
+            })}
+          </div>
+        )}
+
         <div className="cart-checkout">
           <Link to="/" style={{ textDecoration: "none" }}>
             <div className="backShopping">
