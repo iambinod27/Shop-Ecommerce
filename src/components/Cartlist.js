@@ -22,7 +22,7 @@ const Cartlist = ({ name, price, brand, img, id, quantity }) => {
     });
     console.log(newCart);
 
-    return newCart;
+    setCart(cart);
   };
 
   const decrement = (id) => {

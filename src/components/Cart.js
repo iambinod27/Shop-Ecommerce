@@ -1,15 +1,12 @@
 import { ArrowBackIosOutlined, Delete } from "@material-ui/icons";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 import { ProductContext } from "../context/ProductContext";
 import Cartlist from "./Cartlist";
 
 const Cart = () => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
-
-  console.log(cart);
 
   const removeAll = () => {
     setCart([]);
@@ -32,10 +29,6 @@ const Cart = () => {
         ) : (
           <div className="cart-list">
             {cart.map((item) => {
-              if (item.length <= 0) {
-                return <h2>No Item on Cart</h2>;
-              } else {
-              }
               return (
                 <Cartlist
                   name={item.name}
