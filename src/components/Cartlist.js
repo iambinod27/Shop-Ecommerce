@@ -2,7 +2,7 @@ import { Delete } from "@material-ui/icons";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 
-const Cartlist = ({ name, price, brand, img, id, quantity }) => {
+const Cartlist = ({ name, price, brand, img, id, quantity, total }) => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
@@ -19,6 +19,14 @@ const Cartlist = ({ name, price, brand, img, id, quantity }) => {
       }
     });
 
+    cart.find((item) => {
+      if (item.id === id) {
+        const amount = item.price;
+        const qty = item.quantity;
+        return (item.total = amount * qty);
+      }
+    });
+
     setCart((prevItem) => [...prevItem]);
   };
 
@@ -30,6 +38,14 @@ const Cartlist = ({ name, price, brand, img, id, quantity }) => {
         }
 
         return (item.quantity -= 1);
+      }
+    });
+
+    cart.find((item) => {
+      if (item.id === id) {
+        const amount = item.price;
+        const qty = item.quantity;
+        return (item.total = amount * qty);
       }
     });
 
@@ -54,6 +70,10 @@ const Cartlist = ({ name, price, brand, img, id, quantity }) => {
           <button onClick={() => increment(id)}>+</button>
           <span>{quantity}</span>
           <button onClick={() => decrement(id)}>-</button>
+        </div>
+
+        <div className="cart-total">
+          <h3>${total}</h3>
         </div>
 
         <div className="cart-remove">

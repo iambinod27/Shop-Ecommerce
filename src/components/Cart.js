@@ -12,6 +12,10 @@ const Cart = () => {
     setCart([]);
   };
 
+  const subTotal = cart.reduce((subTotal, item) => {
+    return subTotal + item.total;
+  }, 0);
+
   return (
     <section className="cart-section">
       <div className="container">
@@ -38,6 +42,7 @@ const Cart = () => {
                   img={item.image}
                   id={item.id}
                   quantity={item.quantity}
+                  total={item.total}
                 />
               );
             })}
@@ -54,7 +59,7 @@ const Cart = () => {
 
           <div className="checkout">
             <h3>Subtotal:</h3>
-            <h1>$0</h1>
+            <h1>${subTotal}</h1>
             <button className="btn">Checkout</button>
           </div>
         </div>

@@ -20,6 +20,7 @@ const ProductCard = ({ name, price, id, img, brandName, quantity }) => {
         brand: brandName,
         image: img,
         quantity: quantity,
+        total: price,
       },
     ]);
   };
