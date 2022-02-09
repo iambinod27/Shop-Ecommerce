@@ -4,6 +4,7 @@ import {
   StarOutlined,
 } from "@material-ui/icons";
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
 const ProductCard = ({ name, price, id, img, brandName, quantity }) => {
@@ -29,7 +30,9 @@ const ProductCard = ({ name, price, id, img, brandName, quantity }) => {
     <div className="products">
       <img src={img} alt="#" />
       <h1>${price}</h1>
-      <h3>{name}</h3>
+      <Link to="product" style={{ textDecoration: "none" }}>
+        <h3>{name}</h3>
+      </Link>
       <ul className="reviews">
         <li>
           <StarOutlined className="stared" />
