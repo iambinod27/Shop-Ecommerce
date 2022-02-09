@@ -1,6 +1,4 @@
 import { Delete } from "@material-ui/icons";
-import { useState } from "react";
-import { useEffect } from "react";
 import { useContext } from "react";
 import { ProductContext } from "../context/ProductContext";
 
@@ -15,18 +13,17 @@ const Cartlist = ({ name, price, brand, img, id, quantity }) => {
   };
 
   const increment = (id) => {
-    const newCart = cart.find((item) => {
+    cart.find((item) => {
       if (item.id === id) {
         return (item.quantity += 1);
       }
     });
-    console.log(newCart);
 
-    setCart(cart);
+    setCart((prevItem) => [...prevItem]);
   };
 
   const decrement = (id) => {
-    const newCart = cart.find((item) => {
+    cart.find((item) => {
       if (item.id === id) {
         if (item.quantity <= 1) {
           return removeItem(id);
@@ -36,8 +33,7 @@ const Cartlist = ({ name, price, brand, img, id, quantity }) => {
       }
     });
 
-    console.log(newCart);
-    return newCart;
+    setCart((prevItem) => [...prevItem]);
   };
 
   return (
