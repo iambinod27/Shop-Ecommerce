@@ -861,6 +861,18 @@ nav {
               border-radius: 5px;
               font-size: 1.2rem;
               color: #fff;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              cursor: pointer;
+
+              &:hover {
+                background-color: #02b485;
+              }
+
+              .cart {
+                margin-right: 5px;
+              }
             }
           }
         }

@@ -33,6 +33,7 @@ function BestSelling() {
                     img={item.image}
                     brandName={item.brandName}
                     quantity={item.quantity}
+                    category={item.category}
                   />
                 );
               }

@@ -7,7 +7,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
-const ProductCard = ({ name, price, id, img, brandName, quantity }) => {
+const ProductCard = ({
+  name,
+  price,
+  id,
+  img,
+  brandName,
+  quantity,
+  category,
+}) => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
@@ -30,7 +38,18 @@ const ProductCard = ({ name, price, id, img, brandName, quantity }) => {
     <div className="products">
       <img src={img} alt="#" />
       <h1>${price}</h1>
-      <Link to="product" style={{ textDecoration: "none" }}>
+      <Link
+        to={`/product/${id}/${name}`}
+        state={{
+          name: name,
+          price: price,
+          image: img,
+          brand: brandName,
+          category: category,
+          quantity: quantity,
+        }}
+        style={{ textDecoration: "none" }}
+      >
         <h3>{name}</h3>
       </Link>
       <ul className="reviews">
