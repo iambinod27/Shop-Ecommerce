@@ -1,7 +1,7 @@
 import { KeyboardArrowDown } from "@material-ui/icons";
 import React from "react";
 
-const Category = ({ brands, filterItems }) => {
+const Category = ({ brands }) => {
   return (
     <div className="categories-link">
       <div className="container">
@@ -41,7 +41,6 @@ const Category = ({ brands, filterItems }) => {
           </li>
           <li>Desktops</li>
           <li>Gaming Laptops</li>
-          <li>Custom Build</li>
         </ul>
       </div>
     </div>

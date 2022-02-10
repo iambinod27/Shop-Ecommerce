@@ -10,16 +10,6 @@ function Accessories() {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
 
-  const filterItems = (category) => {
-    if (category === "all") {
-      setProduct(product);
-    }
-
-    const newItems = product.filter((item) => item.category === category);
-
-    setProduct(newItems);
-  };
-
   return (
     <section className="showcase">
       <div className="container">

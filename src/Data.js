@@ -4,7 +4,7 @@ const data = [
     brandName: "ACER",
     category: "Laptops",
     productName: "Acer Nitro 5 AN517-54-79L1 Gaming Laptop",
-    price: 1119.99,
+    price: 1119.0,
     image: require("./Assests/Laptops/AcerNitro5AN517.jpg"),
     sale: false,
     quantity: 1,

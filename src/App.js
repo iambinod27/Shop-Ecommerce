@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import ProductDetail from "./pages/ProductDetail";
+import ProductView from "./pages/ProductView";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
             <Route path="signup" element={<Create />} />
             <Route path="login" element={<Login />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="product/:id" element={<ProductDetail />} />
+            <Route path="productdetail/:id" element={<ProductDetail />} />
+            <Route path="product" element={<ProductView />} />
           </Routes>
           <Footer />
         </main>

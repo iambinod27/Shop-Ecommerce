@@ -5,6 +5,7 @@ import {
 import React, { useRef, useState, useContext } from "react";
 import ProductCard from "./ProductCard";
 import { ProductContext } from "../context/ProductContext";
+import { Link } from "react-router-dom";
 
 const FeaturedProduct = () => {
   const { products } = useContext(ProductContext);
@@ -34,9 +35,11 @@ const FeaturedProduct = () => {
         <div className="showcase-container">
           <div className="header-showcase">
             <h2>Featured Products</h2>
-            <p>
-              view all <ArrowForwardIosOutlined className="forward" />
-            </p>
+            <Link to="/product" style={{ textDecoration: "none" }}>
+              <p>
+                view all <ArrowForwardIosOutlined className="forward" />
+              </p>
+            </Link>
           </div>
           <ArrowBackIosOutlined
             className="sliderArrow left"

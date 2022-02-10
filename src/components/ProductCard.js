@@ -3,7 +3,7 @@ import {
   StarBorderOutlined,
   StarOutlined,
 } from "@material-ui/icons";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
@@ -40,7 +40,7 @@ const ProductCard = ({
       <img src={img} alt="#" />
       <h1>${price}</h1>
       <Link
-        to={`/product/${id}`}
+        to={`/productdetail/${id}`}
         state={{
           name: name,
           price: price,
@@ -54,23 +54,7 @@ const ProductCard = ({
       >
         <h3>{name}</h3>
       </Link>
-      <ul className="reviews">
-        <li>
-          <StarOutlined className="stared" />
-        </li>
-        <li>
-          <StarOutlined className="stared" />
-        </li>
-        <li>
-          <StarOutlined className="stared" />
-        </li>
-        <li>
-          <StarBorderOutlined className="unstared" />
-        </li>
-        <li>
-          <StarBorderOutlined className="unstared" />
-        </li>
-      </ul>
+
       <button className="btn" onClick={addCart}>
         <ShoppingCartOutlined className="cart" />
         Add to cart
