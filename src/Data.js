@@ -204,6 +204,20 @@ const data = [
     shortDesc:
       "38.1cm (15 inch) laptop with responsive performance in a sleek design with 2-sided narrow borders, optional PCIe SSDs, Express Charge*, and an AMD Ryzen™ 5 3450U Mobile Processor.",
   },
+  {
+    id: 16,
+    brandName: "ASUS",
+    category: "Laptops",
+    productName:
+      "Asus VivoBook Flip 14 TM420IA Ryzen 3 4300U / 4GB RAM/ 256GB SSD / 14' FHD 360 Touch display / Stylus support",
+    price: 750.0,
+    image: require("./Assests/Laptops/asus-vivobook-flip-14-price-nepal-tm420ua-budget-convertible.jpg"),
+    sale: true,
+    quantity: 1,
+    total: 0,
+    shortDesc:
+      "Brand new Asus VivoBook Flip 14 TM420IA with AMD Ryzen 3 4300U Processor, 4GB DDR4 RAM (Expandable up to 16GB), 256GB M.2 NVMe PCIe 3.0 SSD Storage, 14-inch Touch display with Full-HD (1920 x 1080 pixels) resolution, Backlit keyboard, 1.5KG Weight, 0.72-inch thickness, Comes with 2 Years Warranty, Free Asus Bag, Asus Stylus, And Asus Mouse ",
+  },
 ];
 
 export default data;

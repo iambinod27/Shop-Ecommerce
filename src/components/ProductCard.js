@@ -40,7 +40,7 @@ const ProductCard = ({
       <img src={img} alt="#" />
       <h1>${price}</h1>
       <Link
-        to={`/product/${id}/${name}`}
+        to={`/product/${id}`}
         state={{
           name: name,
           price: price,
