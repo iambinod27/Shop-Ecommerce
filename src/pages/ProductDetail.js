@@ -13,7 +13,8 @@ const ProductDetail = () => {
   const [cart, setCart] = carts;
 
   const location = useLocation();
-  const { name, price, brand, image, category, quantity } = location.state;
+  const { name, price, brand, image, category, quantity, shortDesc } =
+    location.state;
 
   const addCart = () => {
     setCart((prevItem) => [
@@ -46,10 +47,7 @@ const ProductDetail = () => {
             </div>
 
             <div className="content-desc">
-              <p>
-                Apple Macbook Pro 13.3 inch comes with M1 Chip with 8-Core CPU,
-                8-Core GPU, 8GB, 256GB
-              </p>
+              <p>{shortDesc}</p>
 
               <div className="specification">
                 <h1>Specification:</h1>
@@ -79,7 +77,11 @@ const ProductDetail = () => {
           </ul>
 
           <div className="info-box">
-            {!show ? <Description /> : <Specification />}
+            {!show ? (
+              <Description desc={shortDesc} name={name} />
+            ) : (
+              <Specification />
+            )}
           </div>
         </div>
       </div>

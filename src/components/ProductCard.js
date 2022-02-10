@@ -15,6 +15,7 @@ const ProductCard = ({
   brandName,
   quantity,
   category,
+  shortDesc,
 }) => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
@@ -47,6 +48,7 @@ const ProductCard = ({
           brand: brandName,
           category: category,
           quantity: quantity,
+          shortDesc: shortDesc,
         }}
         style={{ textDecoration: "none" }}
       >

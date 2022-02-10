@@ -9,6 +9,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Go full throttle with an 11th Gen Intel® Core™ i7 processor1, GeForce RTX™ 30 Series GPUs1 and the high-speed IPS FHD display with 144Hz refresh and 3ms2 response.",
   },
   {
     id: 2,
@@ -20,6 +22,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "MSI GF63 Thin 10SC 10th Gen Intel Core i5-10300H, NVIDIA GTX 1650 Max-Q Graphics Card with 4GB GDDR6 VRAM, 8GB RAM, 256GB SSD, 15.6' Full-HD Display, 0.85-inch thin and 1.86Kg weight, Red Backlight Keyboard  1 years warranty,",
   },
   {
     id: 3,
@@ -31,6 +35,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "The ROG Zephyrus S is redefining ultra-slim gaming laptops yet again with innovative engineering to cool its 8th Gen Intel Core i7 processor and up to GeForce RTX 2080 with Max-Q design, so you can immerse yourself in its no-compromise 144Hz/3ms display.",
   },
   {
     id: 4,
@@ -42,6 +48,8 @@ const data = [
     image: require("./Assests/Laptops/dell-alienware-area-51m-gaming-laptop.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Experience a 165Hz display with Low Blue Light Technology. Featuring Alienware Cryo-Tech™ cooling and AMD Ryzen™ 5000 Series mobile processor.",
   },
   {
     id: 5,
@@ -53,6 +61,8 @@ const data = [
     image: require("./Assests/Laptops/AcerSwift7SF714-52T__1_.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Elegance and efficiency find the perfect balance in the Swift 7, starting with its incredibly thin 9.95mm chassis. Looks and performance combine in a laptop that sets new standards in compact design. Savor the visuals of a 14” display in a smaller footprint thanks to this minimalist approach.",
   },
   {
     id: 6,
@@ -64,6 +74,8 @@ const data = [
     image: require("./Assests/Laptops/LD0005846339_1.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Go full throttle with the Acer Nitro 5 gaming laptop in either 15 or 17-inch models – whether using it as a laptop for casual gaming or ranking up online.",
   },
   {
     id: 7,
@@ -75,6 +87,8 @@ const data = [
     image: require("./Assests/Laptops/41ami1qQ9pL._AC_SY350_.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Finally, workstation-class power meets thin and light design for executives on-the-go. With advanced features like quad core Intel® Core™ processors and 3D professional graphics, you can view and edit high resolution files from anywhere.",
   },
   {
     id: 8,
@@ -86,6 +100,8 @@ const data = [
     image: require("./Assests/Accessories/Logitech-G430-500x500-1.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "DTS Headphone: X and Dolby 7.1 surround sound: Experience an immersive 360-degree sound field that lets you hear what you can't see",
   },
   {
     id: 9,
@@ -97,6 +113,8 @@ const data = [
     image: require("./Assests/Accessories/Gamdias-HEBE-M1-Ultimate-7.1-1-500x500-1.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "The HEBE M1 RGB Surround Sound Headset is packed with the ultimate 7.1 premium virtual surround sound powered by 50mm speakers along with RGB lighting.",
   },
 
   {
@@ -110,6 +128,8 @@ const data = [
     image: require("./Assests/Accessories/logitech-g402-hyperion-fury-gaming-mouse-price-nepal_1.jpg"),
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Fusion engine high-speed tracking, Length Cable: 2.1m, Durability: Buttons (Left / Right): 20 million clicks ; USB data format: 16 bits/axis ; USB report rate: 1000 Hz (1 ms) ; High-speed clicking ; Dynamic Co-efficient of Friction: 0.09 micro (k)",
   },
 
   {
@@ -123,6 +143,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Logitech BCC950 Conference Cam, an All-in-One Webcam and Speakerphone with Full-HD (1080p) video-calling, Integrated full-duplex speakerphone with echo and noise cancellation, Omni-directional Microphone, Remote Control with 3m IR Range- Camera : Full HD 1080p video calling (up to 1920 x 1080 pixels); 720p HD video calling (up to 1280 x 720 pixels) with supported clientsField of View",
   },
 
   {
@@ -136,6 +158,8 @@ const data = [
     sale: true,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "C310 HD Webcam gives you sharp, smooth video calling (720p/30fps) in a widescreen format. Automatic light correction for clearer, better conference calls.",
   },
 
   {
@@ -148,6 +172,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Full-sized keyboard, ambidextrous mouse—fully wireless and complete. This duo delivers all the functionality you need in one comfortable, durable design that's easy to use and keeps your space nice and clean. Built with Logitech’s known quality standards, MK235 is in it for the long haul.",
   },
 
   {
@@ -161,6 +187,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "Rapoo V500 Pro Mechanical Gaming RGB Keyboard comes with durable and fully mechanical keys that are also Individually Backlit.",
   },
   {
     id: 15,
@@ -173,6 +201,8 @@ const data = [
     sale: false,
     quantity: 1,
     total: 0,
+    shortDesc:
+      "38.1cm (15 inch) laptop with responsive performance in a sleek design with 2-sided narrow borders, optional PCIe SSDs, Express Charge*, and an AMD Ryzen™ 5 3450U Mobile Processor.",
   },
 ];
 

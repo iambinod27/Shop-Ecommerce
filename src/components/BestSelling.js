@@ -34,6 +34,7 @@ function BestSelling() {
                     brandName={item.brandName}
                     quantity={item.quantity}
                     category={item.category}
+                    shortDesc={item.shortDesc}
                   />
                 );
               }
