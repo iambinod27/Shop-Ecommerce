@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../Assests/logo/shopping-bag-svgrepo-com.svg";
 import Search from "@material-ui/icons/Search";
 import { PersonOutlined, ShoppingCartOutlined } from "@material-ui/icons";
@@ -25,10 +25,13 @@ const Navbar = () => {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
 
-  const filterItems = (category) => {
-    const newItems = product.filter((item) => item.category === "Laptops");
+  const { items } = useContext(ProductContext);
+  const [item, setItem] = items;
 
-    setProduct(newItems);
+  const filterItems = (brand) => {
+    const newItems = product.filter((item) => item.brandName === brand);
+
+    setItem(newItems);
   };
 
   return (
@@ -64,7 +67,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <Category brands={brand} filterItems={filterItems} />
+      <Category brands={brand} filterItems={filterItems} items={item} />
     </header>
   );
 };

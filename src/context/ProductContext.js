@@ -10,13 +10,19 @@ export const ProductProvider = ({ children }) => {
 
   const [cart, setCart] = useState(cartFromLocalStorage);
 
+  const [item, setItem] = useState([]);
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   return (
     <ProductContext.Provider
-      value={{ products: [product, setProduct], carts: [cart, setCart] }}
+      value={{
+        products: [product, setProduct],
+        carts: [cart, setCart],
+        items: [item, setItem],
+      }}
     >
       {children}
     </ProductContext.Provider>

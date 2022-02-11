@@ -5,15 +5,14 @@ import ProductCard from "../components/ProductCard";
 import { ProductContext } from "../context/ProductContext";
 
 const ProductView = () => {
-  const { products } = useContext(ProductContext);
-  const [product, setProduct] = products;
-
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
   const location = useLocation();
   const { brand } = location.state;
-  console.log(brand);
+
+  const { items } = useContext(ProductContext);
+  const [item, setItem] = items;
 
   const addCart = (name, price, brandName, img, quantity, total, id) => {
     const exist = cart.find((item) => item.id === id);
@@ -44,42 +43,53 @@ const ProductView = () => {
     <section className="view">
       <div className="container">
         <div className="view-one">
-          <h1>All availible Products</h1>
+          <h1>{brand} products</h1>
         </div>
         <div className="view-two">
-          {product.map((item) => {
+          {item.map((item) => {
+            const {
+              id,
+              image,
+              price,
+              productName,
+              brandName,
+              category,
+              quantity,
+              shortDesc,
+            } = item;
+
             return (
-              <section key={item.id}>
+              <section key={id}>
                 <div className="view-item">
                   <div className="view-container">
-                    <img src={item.image} alt="" />
-                    <h1>${item.price}</h1>
+                    <img src={image} alt="" />
+                    <h1>${price}</h1>
                     <Link
-                      to={`/productdetail/${item.id}`}
+                      to={`/productdetail/${id}`}
                       state={{
-                        name: item.productName,
-                        price: item.price,
-                        image: item.image,
-                        brand: item.brandName,
-                        category: item.category,
-                        quantity: item.quantity,
-                        shortDesc: item.shortDesc,
+                        name: productName,
+                        price: price,
+                        image: image,
+                        brand: brandName,
+                        category: category,
+                        quantity: quantity,
+                        shortDesc: shortDesc,
                       }}
                       style={{ textDecoration: "none" }}
                     >
-                      <div className="product-name">{item.productName}</div>
+                      <div className="product-name">{productName}</div>
                     </Link>
                     <button
                       className="btn"
                       onClick={() =>
                         addCart(
-                          item.productName,
-                          item.price,
-                          item.brandName,
-                          item.image,
-                          item.quantity,
-                          item.price,
-                          item.id
+                          productName,
+                          price,
+                          brandName,
+                          image,
+                          quantity,
+                          price,
+                          id
                         )
                       }
                     >

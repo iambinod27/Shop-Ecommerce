@@ -3,6 +3,7 @@ import {
   ArrowForwardIosOutlined,
 } from "@material-ui/icons";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import ProductCard from "./ProductCard";
 
@@ -10,15 +11,31 @@ function Accessories() {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
 
+  const { items } = useContext(ProductContext);
+  const [item, setItem] = items;
+
+  const filterItems = () => {
+    const newItems = product.filter((item) => item.category === "Accessories");
+
+    setItem(newItems);
+  };
+
   return (
     <section className="showcase">
       <div className="container">
         <div className="showcase-container">
           <div className="header-showcase">
             <h2>Accessories</h2>
-            <p>
-              view all <ArrowForwardIosOutlined className="forward" />
-            </p>
+            <Link
+              to="/product"
+              style={{ textDecoration: "none" }}
+              onClick={filterItems}
+              state={{ brand: "Accessories" }}
+            >
+              <p>
+                view all <ArrowForwardIosOutlined className="forward" />
+              </p>
+            </Link>
           </div>
           <ArrowBackIosOutlined className="sliderArrow left" />
 

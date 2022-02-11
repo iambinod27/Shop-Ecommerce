@@ -5,10 +5,20 @@ import {
 } from "@material-ui/icons";
 import { ProductContext } from "../context/ProductContext";
 import ProductCard from "./ProductCard";
+import { Link } from "react-router-dom";
 
 function BestSelling() {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
+
+  const { items } = useContext(ProductContext);
+  const [item, setItem] = items;
+
+  const filterItems = () => {
+    const newItems = product.filter((item) => item.sale === true);
+
+    setItem(newItems);
+  };
 
   return (
     <section className="showcase">
@@ -16,9 +26,16 @@ function BestSelling() {
         <div className="showcase-container">
           <div className="header-showcase">
             <h2>Best Selling Product</h2>
-            <p>
-              view all <ArrowForwardIosOutlined className="forward" />
-            </p>
+            <Link
+              to="/product"
+              style={{ textDecoration: "none" }}
+              state={{ brand: "Most Selling" }}
+              onClick={filterItems}
+            >
+              <p>
+                view all <ArrowForwardIosOutlined className="forward" />
+              </p>
+            </Link>
           </div>
           <ArrowBackIosOutlined className="sliderArrow left" />
           <div className="Products-container">

@@ -14,6 +14,13 @@ const FeaturedProduct = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
 
+  const { items } = useContext(ProductContext);
+  const [item, setItem] = items;
+
+  const filterItems = () => {
+    setItem(product);
+  };
+
   const productRef = useRef();
 
   const handleClick = (direction) => {
@@ -35,7 +42,12 @@ const FeaturedProduct = () => {
         <div className="showcase-container">
           <div className="header-showcase">
             <h2>Featured Products</h2>
-            <Link to="/product" style={{ textDecoration: "none" }}>
+            <Link
+              to="/product"
+              style={{ textDecoration: "none" }}
+              state={{ brand: "All" }}
+              onClick={filterItems}
+            >
               <p>
                 view all <ArrowForwardIosOutlined className="forward" />
               </p>

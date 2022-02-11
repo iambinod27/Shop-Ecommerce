@@ -3,16 +3,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
-const Category = ({ brands }) => {
-  const { products } = useContext(ProductContext);
-  const [product, setProduct] = products;
-
-  const filterItems = (category) => {
-    const newItems = product.filter((item) => item.brand === "DELL");
-
-    setProduct(newItems);
-  };
-
+const Category = ({ brands, filterItems }) => {
   return (
     <div className="categories-link">
       <div className="container">
@@ -24,11 +15,13 @@ const Category = ({ brands }) => {
                 {brands.map((brand, index) => {
                   return (
                     <li key={index}>
-                      <a href="#">
-                        <Link to="/product" state={{ brand: brand }}>
-                          {brand}
-                        </Link>
-                      </a>
+                      <Link
+                        to="/product"
+                        state={{ brand: brand }}
+                        onClick={() => filterItems(brand)}
+                      >
+                        {brand}
+                      </Link>
                     </li>
                   );
                 })}
