@@ -901,13 +901,13 @@ nav {
 }
 
 .view {
-  margin: 3rem 0;
+  margin: 2rem 0;
   .container {
     background-color: var(--background-color);
     border-radius: 10px;
 
     .view-one {
-      padding: 1.6rem;
+      padding: 1.6rem 0;
       border-bottom: 1px solid #b8b6b6;
       width: 95%;
       margin: auto;
@@ -946,8 +946,13 @@ nav {
 
           .product-name {
             margin: 10px;
+            color: #000;
             text-align: center;
             font-size: 1.2rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
           }
 
           .btn {
@@ -959,7 +964,9 @@ nav {
             height: 50px;
             border-radius: 5px;
             margin: 1rem auto;
+            border: none;
             color: #fff;
+            cursor: pointer;
 
             .cart {
               width: 30px;

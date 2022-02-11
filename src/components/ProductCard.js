@@ -20,19 +20,29 @@ const ProductCard = ({
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
-  const addCart = () => {
-    setCart((prevItem) => [
-      ...prevItem,
-      {
-        id: new Date().getMilliseconds().toString(),
-        name: name,
-        price: price,
-        brand: brandName,
-        image: img,
-        quantity: quantity,
-        total: price,
-      },
-    ]);
+  const addCart = (id) => {
+    const exist = cart.find((item) => item.id === id);
+
+    if (exist) {
+      setCart(
+        cart.map((item) =>
+          item.id === id ? { ...exist, quantity: exist.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCart((prevItem) => [
+        ...prevItem,
+        {
+          id: id,
+          name: name,
+          price: price,
+          brand: brandName,
+          image: img,
+          quantity: quantity,
+          total: price,
+        },
+      ]);
+    }
   };
 
   return (
@@ -42,6 +52,7 @@ const ProductCard = ({
       <Link
         to={`/productdetail/${id}`}
         state={{
+          id: id,
           name: name,
           price: price,
           image: img,
@@ -55,7 +66,7 @@ const ProductCard = ({
         <h3>{name}</h3>
       </Link>
 
-      <button className="btn" onClick={addCart}>
+      <button className="btn" onClick={() => addCart(id)}>
         <ShoppingCartOutlined className="cart" />
         Add to cart
       </button>

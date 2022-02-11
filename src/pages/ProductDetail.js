@@ -13,22 +13,32 @@ const ProductDetail = () => {
   const [cart, setCart] = carts;
 
   const location = useLocation();
-  const { name, price, brand, image, category, quantity, shortDesc } =
+  const { name, price, brand, image, category, quantity, shortDesc, id } =
     location.state;
 
-  const addCart = () => {
-    setCart((prevItem) => [
-      ...prevItem,
-      {
-        id: new Date().getMilliseconds().toString(),
-        name: name,
-        price: price,
-        brand: brand,
-        image: image,
-        total: price,
-        quantity: quantity,
-      },
-    ]);
+  const addCart = (id) => {
+    const exist = cart.find((item) => item.id === id);
+
+    if (exist) {
+      setCart(
+        cart.map((item) =>
+          item.id === id ? { ...exist, quantity: exist.quantity + 1 } : item
+        )
+      );
+    } else {
+      setCart((prevItem) => [
+        ...prevItem,
+        {
+          id: id,
+          name: name,
+          price: price,
+          brand: brand,
+          image: image,
+          quantity: quantity,
+          total: price,
+        },
+      ]);
+    }
   };
 
   return (
@@ -61,7 +71,7 @@ const ProductDetail = () => {
                   <li>Force Touch trackpad</li>
                 </ul>
                 <h2>${price}</h2>
-                <button className="btn" onClick={addCart}>
+                <button className="btn" onClick={() => addCart(id)}>
                   <ShoppingCartOutlined className="cart" />
                   Add to cart
                 </button>

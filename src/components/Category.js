@@ -8,7 +8,7 @@ const Category = ({ brands }) => {
   const [product, setProduct] = products;
 
   const filterItems = (category) => {
-    const newItems = product.filter((item) => item.category === "Laptops");
+    const newItems = product.filter((item) => item.brand === "DELL");
 
     setProduct(newItems);
   };
@@ -23,11 +23,13 @@ const Category = ({ brands }) => {
               <ul className="laptops-by-brand">
                 {brands.map((brand, index) => {
                   return (
-                    <Link to="/product">
-                      <li key={index}>
-                        <a href="#">{brand}</a>
-                      </li>
-                    </Link>
+                    <li key={index}>
+                      <a href="#">
+                        <Link to="/product" state={{ brand: brand }}>
+                          {brand}
+                        </Link>
+                      </a>
+                    </li>
                   );
                 })}
               </ul>
