@@ -3,7 +3,14 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
-const Category = ({ brands, filterItems }) => {
+const Category = ({
+  brands,
+  filterItems,
+  aCategory,
+  filterAcc,
+  filterDesktop,
+  filterGamingLaptops,
+}) => {
   return (
     <div className="categories-link">
       <div className="container">
@@ -32,23 +39,39 @@ const Category = ({ brands, filterItems }) => {
             Electronics <KeyboardArrowDown />
             <div className="electronics-container">
               <ul className="electronics">
-                <li>
-                  <a href="#">Headphones</a>
-                </li>
-                <li>
-                  <a href="#">Mouse</a>
-                </li>
-                <li>
-                  <a href="#">Keyboard</a>
-                </li>
-                <li>
-                  <a href="#">Webcam</a>
-                </li>
+                {aCategory.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <Link
+                        to="/product"
+                        state={{ brand: item }}
+                        onClick={() => filterAcc(item)}
+                        style={{ textDecoration: "none", color: "#000" }}
+                      >
+                        {item}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </li>
-          <li>Desktops</li>
-          <li>Gaming Laptops</li>
+          <Link
+            to="/product"
+            style={{ textDecoration: "none" }}
+            state={{ brand: "Desktops" }}
+            onClick={filterDesktop}
+          >
+            <li>Desktops </li>
+          </Link>
+          <Link
+            to="/product"
+            style={{ textDecoration: "none" }}
+            state={{ brand: "Gaming Laptops" }}
+            onClick={filterGamingLaptops}
+          >
+            <li>Gaming Laptops</li>
+          </Link>
         </ul>
       </div>
     </div>

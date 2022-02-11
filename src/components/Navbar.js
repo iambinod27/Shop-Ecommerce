@@ -18,6 +18,17 @@ const brand = [
   ),
 ];
 
+const accCategory = [
+  ...new Set(
+    data.map((item) => {
+      if (item.category === "Accessories") {
+        const aacat = item.aCategory;
+        return aacat;
+      }
+    })
+  ),
+];
+
 const Navbar = () => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
@@ -28,10 +39,46 @@ const Navbar = () => {
   const { items } = useContext(ProductContext);
   const [item, setItem] = items;
 
+  const [search, setSearch] = useState("");
+  const [query, setQuery] = useState("");
+
   const filterItems = (brand) => {
     const newItems = product.filter((item) => item.brandName === brand);
 
     setItem(newItems);
+  };
+
+  const filterAcc = (items) => {
+    const newItems = product.filter((item) => item.aCategory === items);
+
+    setItem(newItems);
+  };
+
+  const filterDesktop = () => {
+    const newItems = product.filter((item) => item.category === "Desktop");
+    setItem(newItems);
+  };
+
+  const filterGamingLaptops = () => {
+    const newItems = product.filter((item) => item.compCategory === "Gaming");
+    setItem(newItems);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = product.map((item) => item.productName);
+
+    console.log(name);
+
+    if (name === search) {
+    }
+
+    setSearch("");
+  };
+
+  const getProduct = (e) => {
+    return setSearch(e.target.value);
   };
 
   return (
@@ -44,10 +91,20 @@ const Navbar = () => {
             </div>
           </Link>
           <div className="search-bar">
-            <input type="text" placeholder="Search" />
-            <button className="btn">
-              <Search className="search" />
-            </button>
+            <form onSubmit={handleSubmit}>
+              <label>
+                <input
+                  type="text"
+                  placeholder="Search"
+                  value={search}
+                  onChange={getProduct}
+                  required
+                />
+                <button className="btn">
+                  <Search className="search" />
+                </button>
+              </label>
+            </form>
           </div>
           <div className="user-section">
             <Link to="/login" style={{ textDecoration: "none" }}>
@@ -67,7 +124,14 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <Category brands={brand} filterItems={filterItems} items={item} />
+      <Category
+        brands={brand}
+        filterItems={filterItems}
+        aCategory={accCategory}
+        filterAcc={filterAcc}
+        filterDesktop={filterDesktop}
+        filterGamingLaptops={filterGamingLaptops}
+      />
     </header>
   );
 };

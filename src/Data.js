@@ -4,6 +4,7 @@ const data = [
     brandName: "ACER",
     category: "Laptops",
     productName: "Acer Nitro 5 AN517-54-79L1 Gaming Laptop",
+    compCategory: "Gaming",
     price: 1119.0,
     image: require("./Assests/Laptops/AcerNitro5AN517.jpg"),
     sale: false,
@@ -17,6 +18,8 @@ const data = [
     brandName: "MSI",
     category: "Laptops",
     productName: "MSI GF63 Thin Laptop",
+    compCategory: "Gaming",
+
     price: 959,
     image: require("./Assests/Laptops/msi-_0035_GF63-Thin-10SCXR-4.jpg"),
     sale: false,
@@ -43,6 +46,7 @@ const data = [
     brandName: "DELL",
     category: "Laptops",
     productName: "ALIENWARE AREA-51M",
+    compCategory: "Gaming",
     price: 4523,
     sale: false,
     image: require("./Assests/Laptops/dell-alienware-area-51m-gaming-laptop.jpg"),
@@ -68,6 +72,7 @@ const data = [
     id: 6,
     brandName: "ACER",
     category: "Laptops",
+    compCategory: "Gaming",
     productName: "Acer Nitro 5 ",
     price: 789.0,
     sale: false,
@@ -94,6 +99,7 @@ const data = [
     id: 8,
     brandName: "Logitech",
     category: "Accessories",
+    aCategory: "Headphones",
     sale: true,
     productName: "Logitech G430 USB Gaming Headset",
     price: 60.0,
@@ -108,6 +114,7 @@ const data = [
     brandName: "Gamdias",
     sale: false,
     category: "Accessories",
+    aCategory: "Headphones",
     productName: "Gamdias HEBE M1 Premium Virtual Surround Sound",
     price: 62.0,
     image: require("./Assests/Accessories/Gamdias-HEBE-M1-Ultimate-7.1-1-500x500-1.jpg"),
@@ -122,6 +129,7 @@ const data = [
     brandName: "Logitech",
     sale: false,
     category: "Accessories",
+    aCategory: "Mouse",
     productName:
       "Logitech G402 Hyperion Fury Ultra Fast FPS Gaming Mouse 4000 DPI, 1ms Report Time",
     price: 80.0,
@@ -136,6 +144,7 @@ const data = [
     id: 11,
     brandName: "Logitech",
     category: "Accessories",
+    aCategory: "Webcam",
     productName:
       "Logitech BCC950 All-in-One Webcam and Speakerphone - 1080p video, 1' Screen, In-built Mic",
     price: 400.0,
@@ -151,6 +160,7 @@ const data = [
     id: 12,
     brandName: "Logitech",
     category: "Accessories",
+    aCategory: "Webcam",
     productName:
       "Logitech C310 HD WebCam - 720p Video with Noise Reducing Mic, Lighting Correction",
     price: 45.0,
@@ -167,6 +177,8 @@ const data = [
     brandName: "Logitech",
     category: "Accessories",
     productName: "LOGITECH MK235 WIRELESS KEYBOARD AND MOUSE COMBO SET",
+    aCategory: "Keyboard",
+
     price: 32.0,
     image: require("./Assests/Accessories/mk235_1.jpg"),
     sale: false,
@@ -180,6 +192,7 @@ const data = [
     id: 14,
     brandName: "Rapoo",
     category: "Accessories",
+    aCategory: "Keyboard",
     productName:
       "Rapoo V500 Pro Mechanical Gaming RGB Keyboard - Individual Backlit Keys, Spill Resistant",
     price: 55.0,
@@ -217,6 +230,19 @@ const data = [
     total: 0,
     shortDesc:
       "Brand new Asus VivoBook Flip 14 TM420IA with AMD Ryzen 3 4300U Processor, 4GB DDR4 RAM (Expandable up to 16GB), 256GB M.2 NVMe PCIe 3.0 SSD Storage, 14-inch Touch display with Full-HD (1920 x 1080 pixels) resolution, Backlit keyboard, 1.5KG Weight, 0.72-inch thickness, Comes with 2 Years Warranty, Free Asus Bag, Asus Stylus, And Asus Mouse ",
+  },
+  {
+    id: 17,
+    brandName: "AMD",
+    category: "Desktop",
+    productName: "AMD ryzen 5 3400G 8GB RAM 256GB SSD Complete Build",
+    price: 650.0,
+    image: require("./Assests/Desktops/01-500x480.jpg"),
+    sale: true,
+    quantity: 1,
+    total: 0,
+    shortDesc:
+      "ADM Ryzen 5 3400G  with cooler, sRock B450M-HDV R4.0 Motherboard, Patriot 3200Mhz 8GBX1, 256GB GB SSD SATA, Deepcool case with 4ARGB Fans,With 500W PSU",
   },
 ];
 
