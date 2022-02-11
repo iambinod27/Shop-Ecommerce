@@ -67,13 +67,6 @@ const Navbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const name = product.map((item) => item.productName);
-
-    console.log(name);
-
-    if (name === search) {
-    }
-
     setSearch("");
   };
 
@@ -100,6 +93,7 @@ const Navbar = () => {
                   onChange={getProduct}
                   required
                 />
+
                 <button className="btn">
                   <Search className="search" />
                 </button>

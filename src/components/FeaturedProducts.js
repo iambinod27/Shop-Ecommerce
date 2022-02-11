@@ -11,29 +11,11 @@ const FeaturedProduct = () => {
   const { products } = useContext(ProductContext);
   const [product, setProduct] = products;
 
-  const [slideNumber, setSlideNumber] = useState(0);
-  const [isMoved, setIsMoved] = useState(false);
-
   const { items } = useContext(ProductContext);
   const [item, setItem] = items;
 
   const filterItems = () => {
     setItem(product);
-  };
-
-  const productRef = useRef();
-
-  const handleClick = (direction) => {
-    let distance = productRef.current.getBoundingClientRect().x - 10;
-    if (direction === "left" && slideNumber > 0) {
-      setSlideNumber(slideNumber - 1);
-      productRef.current.style.transform = `translateX(${362 + distance}px)`;
-    }
-    if (direction === "right" && slideNumber < 50) {
-      setSlideNumber(slideNumber + 1);
-      productRef.current.style.transform = `translateX(${-362 + distance}px)`;
-      setIsMoved(true);
-    }
   };
 
   return (
@@ -53,12 +35,8 @@ const FeaturedProduct = () => {
               </p>
             </Link>
           </div>
-          <ArrowBackIosOutlined
-            className="sliderArrow left"
-            onClick={() => handleClick("left")}
-            style={{ display: !isMoved && "none" }}
-          />
-          <div className="Products-container" ref={productRef}>
+          <ArrowBackIosOutlined className="sliderArrow left" />
+          <div className="Products-container">
             {product.map((item) => {
               return (
                 <ProductCard
@@ -75,10 +53,7 @@ const FeaturedProduct = () => {
               );
             })}
           </div>
-          <ArrowForwardIosOutlined
-            className="sliderArrow right"
-            onClick={() => handleClick("right")}
-          />
+          <ArrowForwardIosOutlined className="sliderArrow right" />
         </div>
       </div>
     </section>
