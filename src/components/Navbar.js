@@ -26,10 +26,6 @@ const Navbar = () => {
   const [product, setProduct] = products;
 
   const filterItems = (category) => {
-    if (category === "All") {
-      setProduct(product);
-    }
-
     const newItems = product.filter((item) => item.category === "Laptops");
 
     setProduct(newItems);

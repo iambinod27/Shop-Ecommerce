@@ -1,7 +1,18 @@
 import { KeyboardArrowDown } from "@material-ui/icons";
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { ProductContext } from "../context/ProductContext";
 
 const Category = ({ brands }) => {
+  const { products } = useContext(ProductContext);
+  const [product, setProduct] = products;
+
+  const filterItems = (category) => {
+    const newItems = product.filter((item) => item.category === "Laptops");
+
+    setProduct(newItems);
+  };
+
   return (
     <div className="categories-link">
       <div className="container">
@@ -12,9 +23,11 @@ const Category = ({ brands }) => {
               <ul className="laptops-by-brand">
                 {brands.map((brand, index) => {
                   return (
-                    <li key={index}>
-                      <a href="#">{brand}</a>
-                    </li>
+                    <Link to="/product">
+                      <li key={index}>
+                        <a href="#">{brand}</a>
+                      </li>
+                    </Link>
                   );
                 })}
               </ul>

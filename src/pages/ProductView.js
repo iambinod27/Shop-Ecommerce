@@ -10,6 +10,21 @@ const ProductView = () => {
   const { carts } = useContext(ProductContext);
   const [cart, setCart] = carts;
 
+  const addCart = (name, price, brandName, img, quantity, total) => {
+    setCart((prevItem) => [
+      ...prevItem,
+      {
+        id: new Date().getMilliseconds().toString(),
+        name: name,
+        price: price,
+        brand: brandName,
+        image: img,
+        quantity: quantity,
+        total: price,
+      },
+    ]);
+  };
+
   return (
     <section className="view">
       <div className="container">
@@ -26,7 +41,20 @@ const ProductView = () => {
                     <h1>${item.price}</h1>
                     <div className="product-name">{item.productName}</div>
                     <div className="btn">
-                      <ShoppingCartOutlined className="cart" /> Add to cart
+                      <ShoppingCartOutlined
+                        className="cart"
+                        onClick={() =>
+                          addCart(
+                            item.productName,
+                            item.price,
+                            item.brandName,
+                            item.image,
+                            item.quantity,
+                            item.price
+                          )
+                        }
+                      />
+                      Add to cart
                     </div>
                   </div>
                 </div>

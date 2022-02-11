@@ -1,7 +1,10 @@
-import { ArrowBackOutlined, ArrowForwardOutlined } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { useRef, useState } from "react";
 
 function Create() {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const passwordConfirmationRef = useRef();
+
   return (
     <section className="create">
       <div className="create-container">
@@ -9,37 +12,47 @@ function Create() {
           <img src={require("../Assests/Create.jpg")} alt="Login" />
         </div>
         <div className="user-container">
-          <div className="social-section">
-            <h1>CREATE ACCOUNT</h1>
-            <div className="btn-section">
-              <button className="btn-social">Sign Up with Google</button>
-              <button className="btn-social">Sign Up with Facebook</button>
+          <h1>CREATE ACCOUNT</h1>
+
+          <form>
+            <label>
+              <p>Email</p>
+              <input
+                type="email"
+                placeholder="John@example.com"
+                required
+                ref={emailRef}
+              />
+            </label>
+            <label>
+              <p>Password</p>
+              <input
+                type="password"
+                placeholder="*******"
+                required
+                ref={passwordRef}
+              />
+            </label>
+            <label>
+              <p>Password confirmation</p>
+              <input
+                type="password"
+                placeholder="*******"
+                required
+                ref={passwordConfirmationRef}
+              />
+            </label>
+            <div className="agree">
+              <input type="checkbox" />
+              <p>I agree to the terms & conditions</p>
             </div>
-          </div>
-          <div className="info">
-            <p>or use your email for registration</p>
-          </div>
-          <label>
-            <p>Full name</p>
-            <input type="text" placeholder="John Doe" />
-          </label>
 
-          <label>
-            <p>Email</p>
-            <input type="email" placeholder="John@example.com" />
-          </label>
-          <label>
-            <p>Password</p>
-            <input type="password" placeholder="*******" />
-          </label>
-          <div className="agree">
-            <input type="checkbox" />
-            <p>I agree to the terms & conditions</p>
-          </div>
-
-          <div className="btn-section">
-            <button className="btn">Create an account</button>
-          </div>
+            <div className="btn-section">
+              <button type="submit" className="btn">
+                Create an account
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>
