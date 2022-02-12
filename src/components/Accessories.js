@@ -6,6 +6,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 import ProductCard from "./ProductCard";
+import Carousel from "react-elastic-carousel";
 
 function Accessories() {
   const { products } = useContext(ProductContext);
@@ -19,6 +20,12 @@ function Accessories() {
 
     setItem(newItems);
   };
+  const breakPoints = [
+    { width: 325, itemsToShow: 1 },
+    { width: 500, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
 
   return (
     <section className="showcase">
@@ -37,28 +44,28 @@ function Accessories() {
               </p>
             </Link>
           </div>
-          <ArrowBackIosOutlined className="sliderArrow left" />
 
           <div className="Products-container">
-            {product.map((item) => {
-              if (item.category === "Accessories") {
-                return (
-                  <ProductCard
-                    key={item.id}
-                    id={item.id}
-                    name={item.productName}
-                    price={item.price}
-                    img={item.image}
-                    brandName={item.brandName}
-                    quantity={item.quantity}
-                    category={item.category}
-                    shortDesc={item.shortDesc}
-                  />
-                );
-              }
-            })}
+            <Carousel breakPoints={breakPoints}>
+              {product.map((item) => {
+                if (item.category === "Accessories") {
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      id={item.id}
+                      name={item.productName}
+                      price={item.price}
+                      img={item.image}
+                      brandName={item.brandName}
+                      quantity={item.quantity}
+                      category={item.category}
+                      shortDesc={item.shortDesc}
+                    />
+                  );
+                }
+              })}
+            </Carousel>
           </div>
-          <ArrowForwardIosOutlined className="sliderArrow right" />
         </div>
       </div>
     </section>

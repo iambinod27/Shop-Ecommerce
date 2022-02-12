@@ -274,41 +274,13 @@ nav {
         }
       }
 
-      .sliderArrow {
-        width: 50px;
-        height: 25%;
-        background-color: #fff;
-        color: #000;
-        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
-        position: absolute;
-        z-index: 999;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        cursor: pointer;
-
-        &.left {
-          left: 0;
-          border-bottom-right-radius: 10px;
-          border-top-right-radius: 10px;
-        }
-
-        &.right {
-          right: 0;
-          border-bottom-left-radius: 10px;
-          border-top-left-radius: 10px;
-        }
-      }
-
       .Products-container {
         display: flex;
-        width: max-content;
-        transform: translateX(0px);
-        transition: all 1s ease;
 
         .products {
           margin-right: 30px;
           width: 300px;
+          height: 450px;
           text-align: center;
           border-radius: 10px;
           background: #fff;
@@ -325,24 +297,8 @@ nav {
           }
 
           img {
-            width: 75%;
+            max-width: 75%;
             object-fit: cover;
-          }
-
-          .reviews {
-            display: flex;
-            justify-content: center;
-            padding: 5px 0;
-
-            li {
-              .stared {
-                color: gold;
-              }
-
-              .unstared {
-                color: gold;
-              }
-            }
           }
 
           h3 {
@@ -923,6 +879,7 @@ nav {
 
       .view-item {
         width: 325px;
+        height: 450px;
         border-radius: 15px;
         background-color: #fff;
         overflow: hidden;
@@ -935,7 +892,7 @@ nav {
           align-items: center;
 
           img {
-            width: 75%;
+            width: 65%;
             object-fit: cover;
           }
 

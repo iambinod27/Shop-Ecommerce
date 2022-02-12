@@ -1,9 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 function Create() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmationRef = useRef();
 
   return (
     <section className="create">
@@ -33,15 +32,7 @@ function Create() {
                 ref={passwordRef}
               />
             </label>
-            <label>
-              <p>Password confirmation</p>
-              <input
-                type="password"
-                placeholder="*******"
-                required
-                ref={passwordConfirmationRef}
-              />
-            </label>
+
             <div className="agree">
               <input type="checkbox" />
               <p>I agree to the terms & conditions</p>
@@ -51,6 +42,8 @@ function Create() {
               <button type="submit" className="btn">
                 Create an account
               </button>
+
+              <button>Logout</button>
             </div>
           </form>
         </div>

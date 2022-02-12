@@ -6,6 +6,7 @@ import {
 import { ProductContext } from "../context/ProductContext";
 import ProductCard from "./ProductCard";
 import { Link } from "react-router-dom";
+import Carousel from "react-elastic-carousel";
 
 function BestSelling() {
   const { products } = useContext(ProductContext);
@@ -19,7 +20,12 @@ function BestSelling() {
 
     setItem(newItems);
   };
-
+  const breakPoints = [
+    { width: 325, itemsToShow: 1 },
+    { width: 500, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
   return (
     <section className="showcase">
       <div className="container">
@@ -37,27 +43,28 @@ function BestSelling() {
               </p>
             </Link>
           </div>
-          <ArrowBackIosOutlined className="sliderArrow left" />
+
           <div className="Products-container">
-            {product.map((item) => {
-              if (item.sale) {
-                return (
-                  <ProductCard
-                    key={item.id}
-                    id={item.id}
-                    name={item.productName}
-                    price={item.price}
-                    img={item.image}
-                    brandName={item.brandName}
-                    quantity={item.quantity}
-                    category={item.category}
-                    shortDesc={item.shortDesc}
-                  />
-                );
-              }
-            })}
+            <Carousel breakPoints={breakPoints}>
+              {product.map((item) => {
+                if (item.sale) {
+                  return (
+                    <ProductCard
+                      key={item.id}
+                      id={item.id}
+                      name={item.productName}
+                      price={item.price}
+                      img={item.image}
+                      brandName={item.brandName}
+                      quantity={item.quantity}
+                      category={item.category}
+                      shortDesc={item.shortDesc}
+                    />
+                  );
+                }
+              })}
+            </Carousel>
           </div>
-          <ArrowForwardIosOutlined className="sliderArrow right" />
         </div>
       </div>
     </section>
